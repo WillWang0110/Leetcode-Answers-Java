@@ -1,0 +1,5 @@
+// O(n) = n^3logn
+// 注意减少判断次数
+
+//slow as shit
+//shouldn't use two pointer
