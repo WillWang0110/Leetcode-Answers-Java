@@ -1,0 +1,35 @@
+//注意返回是threeSum值，不是distance
+
+class Solution {
+    public int threeSumClosest(int[] nums, int target) {
+        Arrays.sort(nums);
+        int len = nums.length;
+        int ans = nums[len - 1] + nums[len - 2] + nums[len - 3];
+        int comparator = Math.abs(nums[len - 1] + nums[len - 2] + nums[len - 3] - target);
+        
+        
+        for (int i = 0; i < nums.length - 2; i++) {
+            int left = i + 1, right = nums.length - 1;
+
+            while (left < right) {
+                int threeSum = nums[i] + nums[left] + nums[right];
+                if (threeSum - target == 0) return threeSum;
+                else if (threeSum - target > 0) {
+                    if (threeSum - target < comparator) {
+                        comparator = threeSum - target;
+                        ans = threeSum;
+                    }
+                    right -= 1;
+                } else {
+                    if (target - threeSum < comparator) {
+                        comparator = target - threeSum;
+                        ans = threeSum;
+                    }
+                    left += 1;
+                }
+            }
+        }
+        
+        return ans;
+    }
+}
