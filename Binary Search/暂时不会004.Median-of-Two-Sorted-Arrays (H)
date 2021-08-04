@@ -1,5 +1,11 @@
 // The overall run time complexity should be O(log(m+n)).
 
+/**
+* Find partition on smaller array using binary search
+* Every time check l1 < r2 && l2 < r1, if not move the partition accordingly
+* Time Complexity: O(log min(m, n))
+* Space Complecity : O(1)
+**/
 
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
