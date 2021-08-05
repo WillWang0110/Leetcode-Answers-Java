@@ -28,15 +28,27 @@ class Solution {
         int high = m;
         
         while(low <= high) {
+        
+        // partition1是短数组的一半长度
+        // (m+n)/2 -> 中位数 partition2：中位数 - partition1 -> 剩下比中位数小的数的个数，截出一部分长数组，使partition1 + partition2 = (m + n) / 2
+        // 所以after partition1 + partition2 个数之后，就是我们要找的数
+        
             int partition1 = low + (high - low)/2;
             int partition2 = (m+n)/2 - partition1;
             
-            int left1 = (partition1 == 0)? Integer.MIN_VALUE : nums1[partition1-1];
+            //left1 = nums1[partition1 - 1]: 短数组中位数，如果partition1 = 0，说明 m = 0, 那短数组就没数了，我们就不用判断短数组了
+            //left2 = nums2[partition2 - 1]: 长数组截出部分最后一位数，如果partition2 = 0，那我们就不需要在长数组里再取了
+            //right1 = nums1[partition1]: 短数组中位数+1，如果partition1 = m，
+            //right2 = nums2[partition2]: 长数组截出部分最后一位数+1，如果partition2 = n，
+            
+            int left1 = (partition1 == 0)? Integer.MIN_VALUE : nums1[partition1-1]; 
             int left2 = (partition2 == 0)? Integer.MIN_VALUE : nums2[partition2-1];
             int right1 = (partition1 == m)? Integer.MAX_VALUE : nums1[partition1];
             int right2 = (partition2 == n)? Integer.MAX_VALUE : nums2[partition2];
             
             //Good Partition (l1 < r2 && l2 < r1)
+            //短数组中位数 < 长数组截出部分最后一位数 + 1
+            //&& 长数组截出部分最后一位数 < 短数组中位数+1 就可以return
             
             if(left1 > right2) {
                 high = partition1-1;
