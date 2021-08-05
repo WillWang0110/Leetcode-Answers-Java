@@ -9,11 +9,12 @@ Two pointers 用来找sum
 二分法思想:
   int left = 0, right = nums.length - 1;
   while(left < right) {
-    int mid = left + (right - left) / 2;
+    int mid = (left + right) / 2; // **此处可以用 (left + right) >> 1 避免overflow**
     ...
     ...
     ...
   }
+  
   
   ### 08/04 Hash Table - 0
 
