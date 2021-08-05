@@ -1,0 +1,22 @@
+注意String.valueOf() 和 char.toString(), toString是根据返回的是未排序前的char[]，String.valueOf()才能返回
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        
+        Map<String, List<String>> hashMap = new HashMap<>();
+        List<List<String>> ans = new ArrayList<>();
+        
+        for (String str : strs) {
+            char charArray[] = str.toCharArray();
+            Arrays.sort(charArray);
+            String sortedStr = String.valueOf(charArray);
+            
+            if (!hashMap.containsKey(sortedStr)) {
+                hashMap.put(sortedStr, new ArrayList());
+            } 
+            hashMap.get(sortedStr).add(str);
+        }
+        
+        return new ArrayList(hashMap.values());
+    }
+}
