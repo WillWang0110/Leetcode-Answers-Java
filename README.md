@@ -5,7 +5,7 @@
 Week 0 - 5 * 4 = 20 题
 ### 08/02 Two Pointers - 5
 Two pointers 用来找sum
-### 08/03 Binary Search - 3
+### 08/03 Binary Search - 4
 二分法思想:
   int left = 0, right = nums.length - 1;
   while(left < right) {
@@ -15,6 +15,7 @@ Two pointers 用来找sum
     ...
   }
   
+  难点："="情况，edge case
   
   ### 08/04 Hash Table - 0
 
