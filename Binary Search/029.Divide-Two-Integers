@@ -1,0 +1,66 @@
+本题的基本思想就是将divisor不断用左移的方法乘以2来逼近dividend，然后将dividend减去倍乘之后的divisor，
+再重复这个过程直至被除数小于除数。记录这个过程中divisor“倍乘”的总次数，即为答案。
+
+注意可能的负号。提前将被除数和除数取绝对值，符号最后留给商。
+对于整形取绝对值，常设的陷阱就是对于INT_MIN，取反之后就会溢出。为了处理起来简单，把变量统统转换为long long类型。
+Overflow的意思就是结果>INT_MAX
+
+//代码为答案，试图用上面解法，block by TIME LIMIT EXCEEDED，答案思路相同，不知道我的代码哪里错了。
+
+private static int HALF_INT_MIN = -1073741824;
+
+public int divide(int dividend, int divisor) {
+
+    // Special case: overflow.
+    if (dividend == Integer.MIN_VALUE && divisor == -1) {
+        return Integer.MAX_VALUE;
+    }
+
+    /* We need to convert both numbers to negatives.
+     * Also, we count the number of negatives signs. */
+    int negatives = 2;
+    if (dividend > 0) {
+        negatives--;
+        dividend = -dividend;
+    }
+    if (divisor > 0) {
+        negatives--;
+        divisor = -divisor;
+    }
+
+    /* In the first loop, we simply find the largest double of divisor
+     * that fits into the dividend.
+     * The >= is because we're working in negatives. In essence, that
+     * piece of code is checking that we're still nearer to 0 than we
+     * are to INT_MIN. */
+    int highestDouble = divisor;
+    int highestPowerOfTwo = -1;
+    while (highestDouble >= HALF_INT_MIN && dividend <= highestDouble + highestDouble) {
+        highestPowerOfTwo += highestPowerOfTwo;
+        highestDouble += highestDouble;
+    }
+
+    /* In the second loop, we work out which powers of two fit in, by
+     * halving highestDouble and highestPowerOfTwo repeatedly.
+     * We can do this using bit shifting so that we don't break the
+     * rules of the question :-) */
+    int quotient = 0;
+    while (dividend <= divisor) {
+        if (dividend <= highestDouble) {
+            quotient += highestPowerOfTwo;
+            dividend -= highestDouble;
+        }
+        /* We know that these are always even, so no need to worry about the
+         * annoying "bit-shift-odd-negative-number" case. */
+        highestPowerOfTwo >>= 1;
+        highestDouble >>= 1;
+    }
+
+    /* If there was originally one negative sign, then
+     * the quotient remains negative. Otherwise, switch
+     * it to positive. */
+    if (negatives != 1) {
+        return -quotient;
+    }
+    return quotient;
+}
