@@ -26,11 +26,11 @@ Two pointers 用来找sum
 ### 08/06 Tree - 0
 
 Binary search tree: 
-/**
-* The left subtree of a node contains only nodes with keys less than the node's key.
-* The right subtree of a node contains only nodes with keys greater than the node's key.
-* Both the left and right subtrees must also be binary search trees.
-**/
+```
+ * The left subtree of a node contains only nodes with keys less than the node's key.
+ * The right subtree of a node contains only nodes with keys greater than the node's key.
+ * Both the left and right subtrees must also be binary search trees.
+```
 
 
 
