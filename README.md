@@ -50,7 +50,9 @@ Binary search tree:
 要会三种traverse:
 Inorder/Preorder/Postorder DFS traverse
 
-### 08/10 Stack - 1
+### 08/10 Stack - 5
+
+### 08/23 PriorityQueue - 
 
 
 
