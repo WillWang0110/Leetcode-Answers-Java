@@ -1,0 +1,29 @@
+class Solution {
+    public int longestPalindrome(String s) {
+        int sum = 0;
+        int flag = 0;
+        
+        Map<Character, Integer> trackMap = new HashMap<>();
+        
+        char[] charS = s.toCharArray();
+        
+        for (char ch : charS) {
+            if (trackMap.containsKey(ch)) {
+                trackMap.put(ch, trackMap.get(ch) + 1);
+            } else {
+                trackMap.put(ch, 1);
+            }  
+        }
+        
+        for (int val : trackMap.values()) {
+            if (val % 2 == 1) {
+                sum += val - 1;
+                flag = 1;
+            } else {
+                sum += val;
+            }
+        }
+        
+        return sum + flag;
+    }
+}
