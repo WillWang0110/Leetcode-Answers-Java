@@ -1,6 +1,6 @@
 # Leetcode-Answers-Java
 
-## 榜样link： https://github.com/wisdompeak/LeetCode 北美代码下限跳槽，每日分栏目打卡五题到跳槽成功为止
+## 榜样link： https://github.com/wisdompeak/LeetCode 北美代码下限跳槽，分栏目打卡
 
 Week 0 - 5 * 4 = 20 题
 ### 08/02 Two Pointers - 5
@@ -19,7 +19,7 @@ Two pointers 用来找sum
        Integer.MIN_VALUE = -2147483648, Integer.MAX_VALUE = 2147483647, 所以MIN_VALUE取反会造成overflow
        MAX_VALUE + 1 == MIN_VALUE, int型的最大值+1溢出后等于-214783648。二进制系统是通过补码来保存数据的。第一位是符号位，0为正，1为负，当正的除了符号位全为1，再加1就进位了，符号位就会变成1，是负数，其他为0。
   
-### 08/04 Hash Table - 1
+### 08/04 Hash Table - 5
   
 ### 08/05 Heap - 0
 
