@@ -1,6 +1,7 @@
 # Leetcode-Answers-Java
 
-## 榜样link： https://github.com/wisdompeak/LeetCode 北美代码下限跳槽，分栏目打卡
+## 榜样link： https://github.com/wisdompeak/LeetCode 
+## 北美代码下限跳槽，分栏目打卡
 
 Week 0 - 5 * 4 = 20 题
 ### 08/02 Two Pointers - 5
@@ -21,9 +22,9 @@ Two pointers 用来找sum
   
 ### 08/04 Hash Table - 5
   
-### 08/05 Heap - 0
+### 08/05 Heap - 1
 
-### 08/06 Tree - 0
+### 08/06 Tree - 2
 
 Binary search tree: 
 ```
@@ -49,6 +50,8 @@ Binary search tree:
  
 要会三种traverse:
 Inorder/Preorder/Postorder DFS traverse
+
+Preorder: 用stack存储读过的TreeNode, 先add右节点, 再add左节点
 
 ### 08/10 Stack - 5
 
