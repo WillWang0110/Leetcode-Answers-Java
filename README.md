@@ -24,7 +24,7 @@ Two pointers 用来找sum
   
 ### 08/05 Heap - 1
 
-### 08/06 Tree - 2
+### 08/06 Tree - 5
 
 Binary search tree: 
 ```
