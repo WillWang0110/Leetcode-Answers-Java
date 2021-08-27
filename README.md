@@ -55,7 +55,12 @@ Preorder: 用stack存储读过的TreeNode, 先add右节点, 再add左节点
 
 ### 08/10 Stack - 5
 
-### 08/23 PriorityQueue - 
+### 08/23 PriorityQueue - 1
+- 会构建comparator
+- 会构建新class，定义放进PQ里的数据结构
+
+### 08/26 DFS - 
+
 
 
 
