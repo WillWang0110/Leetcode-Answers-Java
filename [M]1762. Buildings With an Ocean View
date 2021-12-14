@@ -27,4 +27,29 @@ class Solution {
     }
 }
 
+2. EZ solution
 
+class Solution {
+    public int[] findBuildings(int[] heights) {
+        
+        List<Integer> res = new ArrayList<>();
+        
+        int len = heights.length - 1;
+        int maxHeight = heights[len] - 1;
+        
+        for (int i = len; i >= 0; i--) {
+            if (heights[i] > maxHeight) {
+                maxHeight = heights[i];
+                res.add(i);
+            }
+        }
+        
+        int[] oceanViewBuildings = new int[res.size()];
+        
+        for (int j = res.size() - 1; j >= 0; j--) {
+            oceanViewBuildings[res.size() - 1 - j] = res.get(j);
+        }
+
+        return oceanViewBuildings;
+    }
+}
