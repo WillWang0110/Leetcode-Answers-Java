@@ -1,3 +1,5 @@
+https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/45551/Preorder-Inorder-and-Postorder-Iteratively-Summarization
+
 本题和用栈实现二叉树的先序遍历和中序遍历的基本思路很相似，但更难一些。
 
 既然是后序遍历，那么就要在遍历完左子树、右子树之后再读取数值。所以作为中继点的根节点会经过三次。
