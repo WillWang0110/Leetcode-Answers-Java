@@ -28,8 +28,30 @@ class Solution {
             if (node.left != null) stack.add(node.left);
             if (node.right != null) stack.add(node.right);
         }
-        
         return res;
-
     }
 }
+
+
+class Solution {
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        // inorder traversal
+        
+        int res = 0;
+        Stack<TreeNode> stack = new Stack<>();
+        
+        while (!stack.isEmpty() || root != null) {
+            
+            if (root != null) {
+                stack.add(root);
+                root = root.left;
+            } else {
+                TreeNode node = stack.pop();
+                if (node.val >= low && node.val <= high) res += node.val;  
+                root = node.right;
+            }   
+        }
+        return res;
+    }
+}
+
