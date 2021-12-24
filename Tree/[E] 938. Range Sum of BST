@@ -55,3 +55,25 @@ class Solution {
     }
 }
 
+class Solution {
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        // postorder traversal
+        
+        int res = 0;
+        Stack<TreeNode> stack = new Stack<>();
+        
+        while (!stack.isEmpty() || root != null) {
+            
+            if (root != null) {
+                if (root.val >= low && root.val <= high) res += root.val;  
+                stack.add(root);
+                root = root.right;
+            } else {
+                TreeNode node = stack.pop();
+                root = node.left;
+            }   
+        }
+        return res;
+    }
+}
+
