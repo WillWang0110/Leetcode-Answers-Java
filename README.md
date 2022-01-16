@@ -3,7 +3,12 @@
 ## 榜样link： https://github.com/wisdompeak/LeetCode 
 ## 北美代码下限跳槽，分栏目打卡
 
-Week 0 - 5 * 4 = 20 题
+### Java basics
+1. Create new array: 
+      type[] array = new type[3];
+      二维数组: int[][] dp = new int[row][col];
+
+
 ### 08/02 Two Pointers - 5
 Two pointers 用来找sum
 ### 08/03 Binary Search - 5
