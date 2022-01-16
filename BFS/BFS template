@@ -1,5 +1,7 @@
 https://leetcode.com/explore/learn/card/queue-stack/231/practical-application-queue/1376/
 
+BFS is to find the shortest path from the root node to the target node
+
 /**
  * Return the length of the shortest path between root and target node.
  */
